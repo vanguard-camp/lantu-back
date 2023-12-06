@@ -1,0 +1,15 @@
+{
+  "name": "lantu-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "cd .. && pnpm start:lantuback"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
