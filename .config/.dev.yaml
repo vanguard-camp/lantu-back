@@ -1,2 +1,21 @@
-TEST_VALUE:
-  name: cookie
+MONGO_CONFIG:
+  name: "ignition_test"
+  type: mongdb
+  url: "mongodb://127.0.0.1:27017"
+  username: "root"
+  password: "123456"
+  database: "ignition_test"
+  entities: "mongo"
+  logging: false
+  synchronize: true
+MYSQL_CONFIG:
+  name: "material_test"
+  type: mysql
+  host: "127.0.0.1"
+  port: 3306
+  username: "root"
+  password: "123456"
+  database: "material_test"
+  entities: "mysql"
+  logging: true
+  synchronize: true
