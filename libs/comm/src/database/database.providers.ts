@@ -1,4 +1,4 @@
-import { getConfig } from 'utils';
+import { getConfig } from 'apps/user/src/utils';
 import { NamingStrategy } from './naming.strategies';
 import { DataSource } from 'typeorm';
 
@@ -6,7 +6,8 @@ const { MONGODB_CONFIG, MYSQL_CONFIG } = getConfig();
 
 const MONGODB_DATABASE_CONFIG = {
   ...MONGODB_CONFIG,
-  entities: [`dist/**/*.${MONGODB_CONFIG.entities}.entity.js`],
+  namingStrategy: new NamingStrategy(),
+  entities: [`dist/**/*.${MONGODB_CONFIG.entities}.entity{.ts,.js}`],
 };
 
 const MYSQL_DATABASE_CONFIG = {

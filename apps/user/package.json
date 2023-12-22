@@ -1,0 +1,15 @@
+{
+  "name": "user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "cd .. && pnpm start:user"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

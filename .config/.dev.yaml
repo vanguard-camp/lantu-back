@@ -1,6 +1,6 @@
-MONGO_CONFIG:
+MONGODB_CONFIG:
   name: "ignition_test"
-  type: mongdb
+  type: mongodb
   url: "mongodb://127.0.0.1:27017"
   username: "root"
   password: "123456"
