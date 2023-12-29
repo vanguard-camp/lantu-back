@@ -3,14 +3,15 @@ import { NamingStrategy } from './naming.strategies';
 import { DataSource } from 'typeorm';
 import { User } from 'apps/user/src/user/user.mysql.entity';
 import { Department } from 'apps/user/src/department/department.mysql.entity';
+import { Site } from 'apps/lantu-back/src/site/site.mongo.entity';
 
 const { MONGODB_CONFIG, MYSQL_CONFIG } = getConfig();
 
 const MONGODB_DATABASE_CONFIG = {
   ...MONGODB_CONFIG,
   namingStrategy: new NamingStrategy(),
-  entities: [`dist/**/*.${MONGODB_CONFIG.entities}.entity{.ts,.js}`],
-  // entities: [User]
+  // entities: [`dist/**/*.${MONGODB_CONFIG.entities}.entity{.ts,.js}`],
+  entities: [Site],
 };
 
 const MYSQL_DATABASE_CONFIG = {
