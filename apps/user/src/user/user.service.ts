@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { Repository } from 'typeorm';
+import { Not, Repository } from 'typeorm';
 import { User } from './user.mysql.entity';
 import { DepartmentService } from '../department/department.service';
 
@@ -26,7 +26,14 @@ export class UserService {
   }
 
   findAll() {
-    return this.userRepository.find({ relations: ['department'] });
+    return this.userRepository.find({
+      select: ['id', 'name'],
+      relations: ['department'],
+    });
+  }
+
+  findNotOne(id: number) {
+    return this.userRepository.find({ where: { id: Not(id) } });
   }
 
   findOne(id: number) {

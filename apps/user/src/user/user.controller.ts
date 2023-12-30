@@ -25,6 +25,11 @@ export class UserController {
     return this.userService.findAll();
   }
 
+  @Get('/notone/:id')
+  findNotOne(@Param('id') id: string) {
+    return this.userService.findNotOne(+id);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.userService.findOne(+id);

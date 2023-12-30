@@ -33,10 +33,10 @@ export class SiteService {
   }
 
   update(id: number, updateSiteDto: UpdateSiteDto) {
-    return `This action updates a #${id} site`;
+    return this.siteRepository.update(id, updateSiteDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} site`;
+    return this.siteRepository.delete(id);
   }
 }
